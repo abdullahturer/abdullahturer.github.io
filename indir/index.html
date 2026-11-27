@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr" data-sayfa="/indir">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#232323">
+  <meta name="description" content="Zikirmatik: reklamsız zikir uygulaması. Android için indir, iPhone için ana ekrana ekle.">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Bu sayfadan "Ana Ekrana Ekle" yapılırsa da simge uygulama olarak açılsın -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Zikirmatik">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <script>
+    // Ana ekrandaki simgeyle (uygulama olarak) açıldıysa doğrudan uygulamaya geç.
+    if ((window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) ||
+        navigator.standalone === true) {
+      location.replace('/');
+    }
+  </script>
+  <title>Zikirmatik</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; background: #232323; color: #eaeaea;
+      font: 16px/1.55 -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+      display: flex; justify-content: center; padding: 32px 16px 48px;
+    }
+    main { width: 100%; max-width: 440px; }
+    header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+    header img { width: 64px; height: 64px; border-radius: 16px; }
+    h1 { font-size: 24px; margin: 0; }
+    header p { margin: 2px 0 0; color: #9a9a9a; font-size: 14px; }
+    .kart { background: #161616; border-radius: 16px; padding: 18px 18px 20px; margin-bottom: 16px; }
+    .kart h2 { font-size: 17px; margin: 0 0 10px; }
+    ol { margin: 10px 0 0; padding-left: 20px; color: #c8c8c8; font-size: 15px; }
+    li { margin: 4px 0; }
+    .buton {
+      display: block; text-align: center; text-decoration: none; font-weight: 600;
+      background: #12c35a; color: #031509; border-radius: 12px; padding: 14px; font-size: 17px;
+    }
+    .buton.ikincil { background: #2e2e2e; color: #eaeaea; }
+    .kucuk { color: #8a8a8a; font-size: 13px; margin-top: 10px; }
+    .gizli { display: none; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="/icons/Icon-192.png" alt="">
+      <div>
+        <h1>Zikirmatik</h1>
+        <p>Reklamsız, sade zikir uygulaması</p>
+      </div>
+    </header>
+
+    <section class="kart" id="android">
+      <h2>Android</h2>
+      <a class="buton" id="apk" href="/indir/Zikirmatik.apk" download="Zikirmatik.apk">Android için indir (APK)</a>
+      <ol>
+        <li>İndirilen dosyaya dokunun.</li>
+        <li>"Bilinmeyen kaynak" uyarısı çıkarsa <b>İzin ver / Yine de yükle</b> deyin.</li>
+        <li>Güncellemelerde aynı şekilde yeni dosyayı kurun; kayıtlarınız silinmez.</li>
+      </ol>
+    </section>
+
+    <section class="kart" id="iphone">
+      <h2>iPhone</h2>
+      <a class="buton ikincil" href="/">Uygulamayı aç</a>
+      <ol>
+        <li>Bu sayfayı <b>Safari</b>'de açın.</li>
+        <li>Alttaki <b>Paylaş</b> simgesine (kare ve yukarı ok) dokunun.</li>
+        <li><b>Ana Ekrana Ekle</b> → <b>Ekle</b>. Ana ekrandaki simge uygulama olarak açılır.</li>
+      </ol>
+      <p class="kucuk">Daha önce eklediğiniz simge Safari'de açılıyorsa: simgeyi silip bu adımlarla yeniden ekleyin.</p>
+      <p class="kucuk">iPhone'da titreşim yok (Apple izin vermiyor). Bunun yerine belirlediğiniz <b>hedef sayıya ulaşınca</b> ve <b>dersteki her zikir bitince bip sesi</b>, ders tamamlanınca üç bip duyulur. Bip sesini uygulamanın üstündeki 🔊 düğmesiyle açıp kapatabilirsiniz. Mini sayaç yok.</p>
+    </section>
+
+    <p class="kucuk">Reklam yok. Uygulama kişisel veri toplamaz; bu sayfa yalnızca anonim ziyaret
+      ve indirme sayısını tutar (çerez kullanılmaz).</p>
+  </main>
+
+  <script src="/stats.js"></script>
+  <script>
+    // iPhone/iPad'de Android bölümünü sona al.
+    if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+      var m = document.querySelector('main');
+      m.insertBefore(document.getElementById('iphone'), document.getElementById('android'));
+    }
+    document.getElementById('apk').addEventListener('click', function () {
+      if (window.zkSay) window.zkSay('apk-indir', 'APK indirildi', true);
+    });
+  </script>
+</body>
+</html>

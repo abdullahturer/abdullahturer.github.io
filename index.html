@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr" data-sayfa="/">
+<head>
+  <!-- `flutter build --base-href` ile değiştirilir (alt klasörde yayınlanırsa). -->
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Reklamsız akıllı zikirmatik: sayaç, günlük dersler, siyah ekranda sayma.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#232323">
+
+  <!-- iPhone: ana ekrana eklenince tam ekran uygulama gibi açılsın -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Zikirmatik">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Zikirmatik</title>
+  <script>
+    // Eski adresten (Netlify) taşınan kayıtlar: #tasi={...}. Yalnızca bu adreste henüz
+    // sayım ya da zikir kaydı yoksa alınır (yeni adreste yapılmış kayıtların üzerine yazılmaz).
+    (function () {
+      var h = location.hash;
+      if (h.indexOf('#tasi=') !== 0) return;
+      try {
+        var veri = JSON.parse(decodeURIComponent(h.slice(6)));
+        var bos = localStorage.getItem('count') === null && localStorage.getItem('zikirs') === null &&
+          localStorage.getItem('tasindi') === null;
+        if (bos && veri && typeof veri === 'object') {
+          for (var k in veri) {
+            if (typeof veri[k] === 'string') localStorage.setItem(k, veri[k]);
+          }
+          localStorage.setItem('tasindi', '1');
+        }
+      } catch (e) {}
+      history.replaceState(null, '', location.pathname + location.search);
+    })();
+  </script>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    html, body { margin: 0; background: #232323; }
+    /* Uygulama yüklenene kadar görünen bekleme ekranı */
+    #yukleniyor {
+      position: fixed; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 16px;
+      color: #9a9a9a; font: 15px -apple-system, system-ui, sans-serif;
+    }
+    #yukleniyor img { width: 96px; height: 96px; border-radius: 22px; }
+  </style>
+</head>
+<body>
+  <div id="yukleniyor">
+    <img src="icons/Icon-192.png" alt="">
+    <div>Zikirmatik yükleniyor…</div>
+  </div>
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var el = document.getElementById('yukleniyor');
+      if (el) el.remove();
+    });
+
+    // Çevrimdışı önbellek: ilk açılıştan sonra internet olmadan da açılsın.
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(function () {});
+      window.addEventListener('flutter-first-frame', function () {
+        navigator.serviceWorker.ready.then(function (reg) {
+          var urls = performance.getEntriesByType('resource')
+            .map(function (e) { return e.name; })
+            .filter(function (u) { return u.indexOf(location.origin) === 0; });
+          urls.push(location.href.split('#')[0]);
+          if (reg.active) reg.active.postMessage({ type: 'cache', urls: urls });
+        });
+      });
+    }
+  </script>
+  <script src="haptics.js"></script>
+  <script src="stats.js" defer></script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

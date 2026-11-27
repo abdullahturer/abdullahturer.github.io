@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "url": "assets/AssetManifest.bin.8702f6e6.json",
+      "hash": "8702f6e6",
+      "size": 298,
+      "urlHashed": true
+    },
+    {
+      "url": "assets/AssetManifest.fe177e84.bin",
+      "hash": "fe177e84",
+      "size": 222,
+      "urlHashed": true
+    },
+    {
+      "url": "assets/FontManifest.2d1bc6f0.json",
+      "hash": "2d1bc6f0",
+      "size": 176,
+      "urlHashed": true
+    },
+    {
+      "url": "assets/NOTICES.74200e3a",
+      "hash": "74200e3a",
+      "size": 1408959,
+      "urlHashed": true
+    },
+    {
+      "url": "assets/fonts/MaterialIcons-Regular.204b8543.otf",
+      "hash": "204b8543",
+      "size": 4584,
+      "urlHashed": true
+    },
+    {
+      "url": "assets/fonts/fallback/Roboto-Regular.79e85140.ttf",
+      "hash": "79e85140",
+      "size": 171676,
+      "urlHashed": true
+    },
+    {
+      "url": "assets/packages/material_ui/shaders/ink_sparkle.2dca5ab9.frag",
+      "hash": "2dca5ab9",
+      "size": 8890,
+      "urlHashed": true
+    },
+    {
+      "url": "assets/packages/wakelock_plus/assets/no_sleep.726c644c.js",
+      "hash": "726c644c",
+      "size": 13669,
+      "urlHashed": true
+    },
+    {
+      "url": "assets/shaders/ink_sparkle.2dca5ab9.frag",
+      "hash": "2dca5ab9",
+      "size": 8890,
+      "urlHashed": true
+    },
+    {
+      "url": "assets/shaders/stretch_effect.ab412f07.frag",
+      "hash": "ab412f07",
+      "size": 6737,
+      "urlHashed": true
+    },
+    {
+      "url": "canvaskit/canvaskit.js",
+      "hash": "4719b51c",
+      "size": 87031,
+      "urlHashed": false
+    },
+    {
+      "url": "canvaskit/canvaskit.wasm",
+      "hash": "f3c2ff16",
+      "size": 7315452,
+      "urlHashed": false
+    },
+    {
+      "url": "canvaskit/chromium/canvaskit.js",
+      "hash": "b836e30a",
+      "size": 86270,
+      "urlHashed": false
+    },
+    {
+      "url": "canvaskit/chromium/canvaskit.wasm",
+      "hash": "e269e717",
+      "size": 5463539,
+      "urlHashed": false
+    },
+    {
+      "url": "canvaskit/skwasm.js",
+      "hash": "02e82120",
+      "size": 63987,
+      "urlHashed": false
+    },
+    {
+      "url": "canvaskit/skwasm.wasm",
+      "hash": "eee8d996",
+      "size": 3612593,
+      "urlHashed": false
+    },
+    {
+      "url": "canvaskit/skwasm_heavy.js",
+      "hash": "545e678b",
+      "size": 64100,
+      "urlHashed": false
+    },
+    {
+      "url": "canvaskit/skwasm_heavy.wasm",
+      "hash": "7f038b46",
+      "size": 5232730,
+      "urlHashed": false
+    },
+    {
+      "url": "canvaskit/webparagraph/canvaskit.js",
+      "hash": "6a95972e",
+      "size": 76114,
+      "urlHashed": false
+    },
+    {
+      "url": "canvaskit/webparagraph/canvaskit.wasm",
+      "hash": "01f0337c",
+      "size": 3753480,
+      "urlHashed": false
+    },
+    {
+      "url": "canvaskit/wimp.js",
+      "hash": "7a8fd95f",
+      "size": 59634,
+      "urlHashed": false
+    },
+    {
+      "url": "canvaskit/wimp.wasm",
+      "hash": "01d9aac3",
+      "size": 3604775,
+      "urlHashed": false
+    },
+    {
+      "url": "favicon.png",
+      "hash": "b8aa3d96",
+      "size": 2749,
+      "urlHashed": false
+    },
+    {
+      "url": "flutter.js",
+      "hash": "d2e7708f",
+      "size": 13169,
+      "urlHashed": false
+    },
+    {
+      "url": "flutter_bootstrap.js",
+      "hash": "63bc1061",
+      "size": 14691,
+      "urlHashed": false
+    },
+    {
+      "url": "haptics.js",
+      "hash": "174a9a45",
+      "size": 8478,
+      "urlHashed": false
+    },
+    {
+      "url": "icons/Icon-192.png",
+      "hash": "616fc11f",
+      "size": 8533,
+      "urlHashed": false
+    },
+    {
+      "url": "icons/Icon-512.png",
+      "hash": "fb93d867",
+      "size": 24801,
+      "urlHashed": false
+    },
+    {
+      "url": "icons/Icon-maskable-192.png",
+      "hash": "18bc5e1e",
+      "size": 6993,
+      "urlHashed": false
+    },
+    {
+      "url": "icons/Icon-maskable-512.png",
+      "hash": "29d9aba5",
+      "size": 20964,
+      "urlHashed": false
+    },
+    {
+      "url": "icons/apple-touch-icon.png",
+      "hash": "f5a914d0",
+      "size": 8342,
+      "urlHashed": false
+    },
+    {
+      "url": "index.html",
+      "hash": "4f5225eb",
+      "size": 3497,
+      "urlHashed": false
+    },
+    {
+      "url": "indir/index.html",
+      "hash": "c0789e55",
+      "size": 4647,
+      "urlHashed": false
+    },
+    {
+      "url": "main.dart.cf03c887.js",
+      "hash": "cf03c887",
+      "size": 2906883,
+      "urlHashed": true
+    },
+    {
+      "url": "manifest.json",
+      "hash": "aba0689d",
+      "size": 1023,
+      "urlHashed": false
+    },
+    {
+      "url": "stats.js",
+      "hash": "9cf47e08",
+      "size": 1874,
+      "urlHashed": false
+    },
+    {
+      "url": "sw.js",
+      "hash": "02191b88",
+      "size": 3240,
+      "urlHashed": false
+    },
+    {
+      "url": "version.json",
+      "hash": "98ece3d0",
+      "size": 94,
+      "urlHashed": false
+    }
+  ]
+}
